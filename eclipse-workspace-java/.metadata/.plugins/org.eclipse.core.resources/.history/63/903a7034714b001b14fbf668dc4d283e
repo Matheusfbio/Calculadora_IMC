@@ -1,0 +1,87 @@
+package javaContaBanco;
+	
+	public class ContaBanco {
+		//atributos
+		public int NumConta;
+		protected String Tipo;
+		private String Dono; 
+		private float Saldo;
+		private boolean Status ;
+		//metodos
+	
+		public void abrirConta(String t) {
+			this.setTipo(t);
+			this.setStatus(true);
+			if (t == "CC") {	
+			this.setSaldo(50);
+			} else if (t == "CP") {
+				this.setSaldo(150);
+			}
+			System.out.println("Conta aberta com sucesso!");	
+		}
+		public void fecharConta() {
+			if (this.getSaldo() > 0) {
+				System.out.println("Conta nao pode ser fecada por que ainda tem dinheiro!!!");
+			} else if (this.getSaldo() < 0) {
+				System.out.println("Conta nao pode ser fechada pois tem debito!!!");
+			} else {
+				this.setStatus(false);
+				System.out.println("Conta fechada com sucesso");
+			}
+			
+		}
+		
+		public void depositar() {
+			if (this.getStatus()) {  
+			this.setSaldo(this.getSaldo() + v);
+			System.out.println("deposito realizado na conta de" + this.getDono());
+			} else {
+		}
+			
+		public void sacar() {
+			
+		}
+		
+		public void pagarMensalidade() {
+			
+		}
+		
+		//Metodos especiais
+		
+		 public ContaBanco() {
+			 this.Saldo = 0;
+			 this.Status = false;
+		 }
+		 public int getNunConta() {
+			 return this.NumConta;
+		 }
+		 
+		 public void setNumConta(int NumConta) {
+			 this.NumConta = NumConta;
+		 } 
+		 public String getTipo() {
+			 return Tipo;
+		 }
+		 public void setTipo(String Tipo) {
+			 this.Tipo = Tipo;
+		 }
+		 public String getDono() {
+			 return Dono;
+		 }
+		 public void setDono(String Dono) {
+			 this.Dono = Dono;
+		 }
+		 public float getSaldo() {
+			 return Saldo;
+		 }
+		 public void setSaldo(float Saldo) {
+			 this.Saldo = Saldo;
+		 }
+		 public boolean getStatus() {
+			 return Status;
+		 }
+		 public void setStatus(boolean Status) {
+			 this.Status = Status; 
+		 }
+		 
+	}
